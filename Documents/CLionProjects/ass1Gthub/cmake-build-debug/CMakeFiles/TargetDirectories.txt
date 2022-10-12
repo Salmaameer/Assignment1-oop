@@ -1,0 +1,3 @@
+/Users/salmaameer/Documents/CLionProjects/ass1Gthub/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/salmaameer/Documents/CLionProjects/ass1Gthub/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/salmaameer/Documents/CLionProjects/ass1Gthub/cmake-build-debug/CMakeFiles/ass1Gthub.dir
