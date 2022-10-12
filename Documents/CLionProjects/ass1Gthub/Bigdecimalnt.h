@@ -8,6 +8,8 @@
 
 class Bigdecimalnt {
 
+public:
+    Bigdecimalnt();
 };
 
 
