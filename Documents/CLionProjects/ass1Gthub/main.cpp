@@ -1,6 +1,9 @@
 #include <iostream>
+#include "Bigdecimalnt.h"
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    BigDecimalnt b1("6060606");
+
+
 }

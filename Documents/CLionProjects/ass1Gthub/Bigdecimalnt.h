@@ -5,11 +5,22 @@
 #ifndef ASS1GTHUB_BIGDECIMALNT_H
 #define ASS1GTHUB_BIGDECIMALNT_H
 
-
-class Bigdecimalnt {
-
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+class BigDecimalnt {
+private:
+    char sign;
 public:
-    Bigdecimalnt();
+
+    BigDecimalnt(string decStr);
+    BigDecimalnt(int decInt );
+    bool checkValid(string decstr);
+    void setSign(char s );
+    char getSign();
+
+
 };
 
 
