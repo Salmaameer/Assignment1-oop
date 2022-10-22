@@ -1,6 +1,8 @@
-//
-// Created by Salma ameer on 12/10/2022.
-//
+//Created By: Salma Ameer Jalal
+//            Marwa Sameh Taha Mostafa
+//            Shimaa
+// Created On:
+// Project Purpose:
 
 #ifndef ASS1GTHUB_BIGDECIMALNT_H
 #define ASS1GTHUB_BIGDECIMALNT_H
@@ -8,21 +10,28 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <regex>
+#include <bits/stdc++.h>
+
 using namespace std;
-class BigDecimalnt {
+class BigDecimalInt {
 private:
     char sign;
+    vector<int> intNum;
+
 public:
 
-    BigDecimalnt(string decStr);
-    BigDecimalnt(int decInt );
+    BigDecimalInt(string decStr);
+    BigDecimalInt(int decInt );
     bool checkValid(string decstr);
     void setSign(char s );
     char getSign();
+    bool operator< (BigDecimalInt anotherDec);
+    BigDecimalInt operator- (BigDecimalInt anotherDec);
+    BigDecimalInt operator+ (BigDecimalInt anotherDec);
 
 
 };
+
 
 
 #endif //ASS1GTHUB_BIGDECIMALNT_H
