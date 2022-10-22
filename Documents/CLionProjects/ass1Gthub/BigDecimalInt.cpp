@@ -414,4 +414,7 @@ bool BigDecimalInt::operator==(BigDecimalInt anotherDec) {
         return false;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// function i --->>> size
+int BigDecimalInt::size() {
+    return intNum.size();
+}
