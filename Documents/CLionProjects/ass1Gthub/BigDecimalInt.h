@@ -30,6 +30,7 @@ public:
     BigDecimalInt operator+ (BigDecimalInt anotherDec);
 
     bool operator >(BigDecimalInt anotherDec);
+    bool operator ==(BigDecimalInt anotherDec);
 
 
 };

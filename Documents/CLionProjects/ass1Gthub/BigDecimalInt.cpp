@@ -351,6 +351,7 @@ BigDecimalInt BigDecimalInt::operator+ (BigDecimalInt anotherDec) {
    return result;
     }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// function f --->>> operator >
 bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
     bool flag = false;
     if(intNum.size() == anotherDec.intNum.size()){
@@ -369,4 +370,21 @@ bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
         return true;
     else
         return false;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// function g --->>> operator ==
+bool BigDecimalInt::operator==(BigDecimalInt anotherDec) {
+    bool flag = true;
+    if(intNum.size() == anotherDec.intNum.size()){
+        for (int i = 0; i < intNum.size(); ++i) {
+            if(intNum[i] != anotherDec.intNum[i]){
+                flag = false;
+                break;
+            }
+        }
+    }
+    if(intNum.size() != anotherDec.intNum.size() || !flag)
+        return false;
+    else
+        return true;
 }
