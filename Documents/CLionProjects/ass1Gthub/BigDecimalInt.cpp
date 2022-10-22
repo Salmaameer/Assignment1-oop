@@ -1,4 +1,4 @@
-#include "Bigdecimalnt.h"
+#include "BigDecimalInt.h"
 //Created By: Salma Ameer Jalal
 //            Marwa Sameh Taha Mostafa
 //            Shaimaa Mohammed Hassanin Afifi
@@ -350,4 +350,23 @@ BigDecimalInt BigDecimalInt::operator+ (BigDecimalInt anotherDec) {
     for(int i : result.intNum){cout<< i;}
    return result;
     }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
+    bool flag = false;
+    if(intNum.size() == anotherDec.intNum.size()){
+        for (int i = 0; i < intNum.size(); ++i) {
+            if(intNum[i] > anotherDec.intNum[i]){
+                flag = true;
+                break;
+            }
+            else if(intNum[i] < anotherDec.intNum[i]){
+                flag = false;
+                break;
+            }
+        }
+    }
+    if(intNum.size() > anotherDec.intNum.size() || flag)
+        return true;
+    else
+        return false;
+}

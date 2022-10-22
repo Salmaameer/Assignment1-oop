@@ -29,6 +29,8 @@ public:
     BigDecimalInt operator- (BigDecimalInt anotherDec);
     BigDecimalInt operator+ (BigDecimalInt anotherDec);
 
+    bool operator >(BigDecimalInt anotherDec);
+
 
 };
 
