@@ -1,12 +1,13 @@
 //Created By: Salma Ameer Jalal
 //            Marwa Sameh Taha Mostafa
-//            Shimaa
+//            Shaimaa Mohammed Hassanin Afifi
 // Created On: 
 // Project Purpose: 
 #include <iostream>
 #include "Bigdecimalnt.h"
 int main() {
-    BigDecimalnt b1("6060606");
+    Bigdecimalnt b1("6060606");
+
 
 
 }
