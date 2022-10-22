@@ -31,6 +31,7 @@ public:
 
     bool operator >(BigDecimalInt anotherDec);
     bool operator ==(BigDecimalInt anotherDec);
+    friend ostream& operator <<(ostream &out, BigDecimalInt b);
 
 
 };

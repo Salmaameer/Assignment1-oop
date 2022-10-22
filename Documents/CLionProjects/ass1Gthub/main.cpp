@@ -4,10 +4,21 @@
 // Created On: 
 // Project Purpose: 
 #include <iostream>
-#include "Bigdecimalnt.h"
+#include "BigDecimalInt.h"
+using namespace std;
+
+ostream& operator <<(ostream &out, BigDecimalInt b){
+    for (int i = 0; i < b.intNum.size(); ++i) {
+        cout << b.intNum[i];
+    }
+    return out;
+}
+
 int main() {
-    Bigdecimalnt b1("6060606");
+    BigDecimalInt num1("155567888880013"), num2("153");
+    cout << num1 << "\n" << num2;
 
 
 
+    return 0;
 }
