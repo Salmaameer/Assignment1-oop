@@ -1,7 +1,7 @@
 #include "Bigdecimalnt.h"
 //Created By: Salma Ameer Jalal
 //            Marwa Sameh Taha Mostafa
-//            Shimaa
+//            Shaimaa Mohammed Hassanin Afifi
 // Created On: 
 // Project Purpose: 
 
