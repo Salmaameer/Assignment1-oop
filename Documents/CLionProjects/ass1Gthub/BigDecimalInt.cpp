@@ -26,19 +26,19 @@ BigDecimalInt::BigDecimalInt(string decStr) {
 
 
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void BigDecimalInt::setSign(char s) {
 sign = s;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 char BigDecimalInt::getSign() {
     return sign;
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool BigDecimalInt::checkValid(string decstr) {
-
     return false;
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool BigDecimalInt::operator < (BigDecimalInt anotherDec){
 int sz = intNum.size();
 int sz2 = anotherDec.intNum.size();
@@ -354,22 +354,47 @@ BigDecimalInt BigDecimalInt::operator+ (BigDecimalInt anotherDec) {
 // function f --->>> operator >
 bool BigDecimalInt::operator>(BigDecimalInt anotherDec) {
     bool flag = false;
-    if(intNum.size() == anotherDec.intNum.size()){
-        for (int i = 0; i < intNum.size(); ++i) {
-            if(intNum[i] > anotherDec.intNum[i]){
-                flag = true;
-                break;
-            }
-            else if(intNum[i] < anotherDec.intNum[i]){
-                flag = false;
-                break;
+    if(sign == '-' && anotherDec.sign == '+')
+        return false;
+    else if(sign == '+' && anotherDec.sign == '-')
+        return true;
+    else if(sign == '+' && anotherDec.sign == '+'){
+        if(intNum.size() == anotherDec.intNum.size()){
+            for (int i = 0; i < intNum.size(); ++i) {
+                if(intNum[i] > anotherDec.intNum[i]){
+                    flag = true;
+                    break;
+                }
+                else if(intNum[i] < anotherDec.intNum[i]){
+                    flag = false;
+                    break;
+                }
             }
         }
+        if(intNum.size() > anotherDec.intNum.size() || flag)
+            return true;
+        else
+            return false;
     }
-    if(intNum.size() > anotherDec.intNum.size() || flag)
-        return true;
-    else
-        return false;
+    else{     // sign = '-' && anotherDec.sign = '-'
+        if(intNum.size() == anotherDec.intNum.size()){
+            for (int i = 0; i < intNum.size(); ++i) {
+                if(intNum[i] > anotherDec.intNum[i]){
+                    flag = false;
+                    break;
+                }
+                else if(intNum[i] < anotherDec.intNum[i]){
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        if(intNum.size() < anotherDec.intNum.size() || flag)
+            return true;
+        else
+            return false;
+    }
+
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // function g --->>> operator ==
@@ -383,8 +408,10 @@ bool BigDecimalInt::operator==(BigDecimalInt anotherDec) {
             }
         }
     }
-    if(intNum.size() != anotherDec.intNum.size() || !flag)
-        return false;
-    else
+    if(sign == anotherDec.sign && intNum.size() == anotherDec.intNum.size() && flag)
         return true;
+    else
+        return false;
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
