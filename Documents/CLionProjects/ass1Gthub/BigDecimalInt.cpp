@@ -2,8 +2,8 @@
 //Created By: Salma Ameer Jalal
 //            Marwa Sameh Taha Mostafa
 //            Shaimaa Mohammed Hassanin Afifi
-// Created On: 
-// Project Purpose: 
+// Created On:
+// Project Purpose:
 
 
 BigDecimalInt::BigDecimalInt(string decStr) {
@@ -144,6 +144,7 @@ int sz = intNum.size();
 int sz2 = anotherDec.intNum.size();
 int diffSz = abs(sz - sz2);
  vector<int> tempVec;
+
     if(sz > sz2){
         for(int i =0 ; i<diffSz ; i++){tempVec.push_back(0);}
         for(int i =0 ; i<sz ; i++){tempVec.push_back(anotherDec.intNum[i]);}
@@ -159,7 +160,8 @@ int diffSz = abs(sz - sz2);
 // at this point the length of both numbers is equal
 // subtracting positive from positive
 if(sign == '+' && anotherDec.sign == '+'){
-
+if(intNum == anotherDec.intNum ){result.intNum ={0};}
+else{
     if(intNum < anotherDec.intNum ){
             result.sign ='-';
         //we want to make sure that intnnum.size is the size of both vectors after adding the zeros LATER
@@ -186,7 +188,7 @@ if(sign == '+' && anotherDec.sign == '+'){
         }
 
     }
-}
+}}
 // subtracting negative from negative
 else if(sign == '-' && anotherDec.sign == '-'){
         //which number without the sign is bigger
@@ -239,6 +241,8 @@ else if( sign == '-' && anotherDec.sign == '+'){
      }}
 else if(sign == '+' && anotherDec.sign == '-'){
           result.sign = '+';
+   if(intNum == anotherDec.intNum ){result.intNum ={0};}
+   else{
      for(int i =intNum.size()-1; i>=0; i--){
             int temp = anotherDec.intNum[i] + intNum[i];
             if(i!=0){
@@ -255,15 +259,14 @@ else if(sign == '+' && anotherDec.sign == '-'){
 
      }
 }
-
-
-
-
+}
 reverse(result.intNum.begin(), result.intNum.end());
-cout<< result.sign;
-for(int i : result.intNum){cout<< i;}
+//cout<< result.sign;
+//for(int i : result.intNum){cout<< i;}
 return result;
 }
+
+
 BigDecimalInt BigDecimalInt::operator+ (BigDecimalInt anotherDec) {
 
     BigDecimalInt result("");
