@@ -8,14 +8,15 @@
 
 BigDecimalInt::BigDecimalInt(string decStr) {
 
+    if (checkValid(decStr)) {
 
         if (decStr[0] == '-' or decStr[0] == '+') {
-           sign = decStr[0];
+            sign = decStr[0];
             for (int i = 1; i < decStr.size(); ++i) {
                 intNum.push_back((decStr[i]) - '0');
             }
 
-        }else {
+        } else {
             sign = '+';
             for (int i = 0; i < decStr.size(); ++i) {
                 intNum.push_back(decStr[i] - '0');
@@ -23,9 +24,38 @@ BigDecimalInt::BigDecimalInt(string decStr) {
         }
 
 
+    }else if (!checkValid(decStr)) {
+        cout << "Invalid number , Enter again with valid syntax ";
+    }
+
+    }
 
 
-}
+
+//////////////////////////////////////////////////////////
+
+BigDecimalInt::BigDecimalInt(int decInt) {
+
+   string newInt =  to_string(decInt);
+//BigDecimalInt result;
+    for (int i = 0; i < newInt.size(); ++i)
+        if (newInt[0] == '-' or newInt[0] == '+') {
+            sign = newInt[0];
+            for (int i = 1; i < newInt.size(); ++i) {
+                intNum.push_back((newInt[i]) - '0');
+            }
+
+        } else {
+            sign = '+';
+            for (int i = 0; i < newInt.size(); ++i) {
+                intNum.push_back(newInt[i] - '0');
+            }
+        }
+    }
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void BigDecimalInt::setSign(char s) {
 sign = s;
@@ -36,7 +66,13 @@ char BigDecimalInt::getSign() {
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool BigDecimalInt::checkValid(string decstr) {
-    return false;
+ regex temp("[-+]?[0-9]+");
+    bool valid = regex_match(decstr,temp);
+
+    if (valid ){
+        return true  ;
+    }else
+            return false;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool BigDecimalInt::operator < (BigDecimalInt anotherDec){
