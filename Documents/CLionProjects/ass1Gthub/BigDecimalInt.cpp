@@ -160,7 +160,7 @@ int diffSz = abs(sz - sz2);
 // at this point the length of both numbers is equal
 // subtracting positive from positive
 if(sign == '+' && anotherDec.sign == '+'){
-if(intNum == anotherDec.intNum ){result.intNum ={0};}
+if(intNum == anotherDec.intNum ){ result.sign = ' '; result.intNum ={0};}
 else{
     if(intNum < anotherDec.intNum ){
             result.sign ='-';
@@ -191,6 +191,7 @@ else{
 }}
 // subtracting negative from negative
 else if(sign == '-' && anotherDec.sign == '-'){
+if(intNum == anotherDec.intNum ){ result.sign = ' '; result.intNum ={0};}
         //which number without the sign is bigger
     if(intNum < anotherDec.intNum ){
         result.sign = '+';
@@ -241,7 +242,7 @@ else if( sign == '-' && anotherDec.sign == '+'){
      }}
 else if(sign == '+' && anotherDec.sign == '-'){
           result.sign = '+';
-   if(intNum == anotherDec.intNum ){result.intNum ={0};}
+
    else{
      for(int i =intNum.size()-1; i>=0; i--){
             int temp = anotherDec.intNum[i] + intNum[i];
